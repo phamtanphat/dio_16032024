@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:dio_16032024/common/app_constant.dart';
 
 class DioClient {
   static Dio? _dio;
@@ -12,7 +13,7 @@ class DioClient {
       connectTimeout: const Duration(seconds: 10),
       receiveTimeout: const Duration(seconds: 10),
       sendTimeout: const Duration(seconds: 10),
-      baseUrl: "https://jsonplaceholder.typicode.com",
+      baseUrl: AppConstant.BASE_URL,
     ));
 
     dio.interceptors.add(LogInterceptor());
