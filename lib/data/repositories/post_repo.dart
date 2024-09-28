@@ -12,7 +12,9 @@ class PostRepository {
           .map((element) => PostDTO.fromJson(element))
           .toList();
       completer.complete(listPostDTO);
-    }).catchError((error) => completer.completeError(error));
+    }).catchError((error) {
+      completer.completeError(error);
+    });
 
     return completer.future;
   }
