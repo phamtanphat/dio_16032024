@@ -7,11 +7,11 @@ abstract class BaseBloc {
   final StreamController<String> _messageController = StreamController();
 
   // Handle event
-  Sink<BaseEvent> eventSink() => _eventController.sink;
+  Sink<BaseEvent> get eventSink => _eventController.sink;
 
   // Handle message
-  Sink<String> messageSink() => _messageController.sink;
-  Stream<String> messageStream() => _messageController.stream;
+  Sink<String> get messageSink => _messageController.sink;
+  Stream<String> get messageStream => _messageController.stream;
 
   BaseBloc() {
     _eventController.stream.listen((event) {
